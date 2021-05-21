@@ -157,6 +157,22 @@ public class Controller {
         playerHP.setText("HP: " + player.getCurrentHitPoints());
         opponentHP.setText("HP: " + opponent.getCurrentHitPoints());
         potionLabel.setText("Potions: " + player.getNumOfPotions());
+        button00.setDisable(true);
+        button01.setDisable(true);
+        button02.setDisable(true);
+        button03.setDisable(true);
+        button10.setDisable(true);
+        button11.setDisable(true);
+        button12.setDisable(true);
+        button13.setDisable(true);
+        button20.setDisable(true);
+        button21.setDisable(true);
+        button22.setDisable(true);
+        button23.setDisable(true);
+        button30.setDisable(true);
+        button31.setDisable(true);
+        button32.setDisable(true);
+        button33.setDisable(true);
 
     }
 
@@ -197,6 +213,22 @@ public class Controller {
                 opponentHP.setText("HP: 0");
                 healButton.setDisable(true);
                 attackButton.setDisable(true);
+                button00.setDisable(false);
+                button01.setDisable(false);
+                button02.setDisable(false);
+                button03.setDisable(false);
+                button10.setDisable(false);
+                button11.setDisable(false);
+                button12.setDisable(false);
+                button13.setDisable(false);
+                button20.setDisable(false);
+                button21.setDisable(false);
+                button22.setDisable(false);
+                button23.setDisable(false);
+                button30.setDisable(false);
+                button31.setDisable(false);
+                button32.setDisable(false);
+                button33.setDisable(false);
 
 
             }
@@ -215,7 +247,7 @@ public class Controller {
     @FXML
     private void healButtonPressed() {
         if (player.heal()) {
-            player.setHitPoints();
+           player.setHitPoints();
             int opponentAttackStrength = opponent.attack();
             player.setCurrentHitPoints(opponentAttackStrength);
             playerHP.setText("HP: " + player.getCurrentHitPoints());
@@ -232,13 +264,33 @@ public class Controller {
 
     @FXML
     private void button00Pressed() {
-        button00.setStyle("-fx-background-color: #ff0000; ");
+        button00.setDisable(true);
+        button01.setDisable(true);
+        button02.setDisable(true);
+        button03.setDisable(true);
+        button10.setDisable(true);
+        button11.setDisable(true);
+        button12.setDisable(true);
+        button13.setDisable(true);
+        button20.setDisable(true);
+        button21.setDisable(true);
+        button22.setDisable(true);
+        button23.setDisable(true);
+        button30.setDisable(true);
+        button31.setDisable(true);
+        button32.setDisable(true);
+        button33.setDisable(true);
         playerRow = 0;
         playerColumn = 0;
         currentDungeon = dungeonMaze[0][0];
         opponent = currentDungeon.getFighter();
         if (opponent.getAlive() == true) {
-            healButton.setDisable(false);
+            if (player.getNumOfPotions()>0) {
+                healButton.setDisable(false);
+            }
+            else{
+                healButton.setDisable(true);
+            }
             attackButton.setDisable(false);
 
             player.setNumOfPotions(3);
@@ -246,6 +298,7 @@ public class Controller {
             opponent.setHitPoints();
             playerHP.setText("HP: " + player.getCurrentHitPoints());
             opponentHP.setText("HP: " + opponent.getCurrentHitPoints());
+            potionLabel.setText("Potions: " + player.getNumOfPotions());
 
             informationLabel.setText("You are currently in the dungeon " + currentDungeon.getName() + ". It can best be " +
                     "\ndescribed as " + currentDungeon.getDescription() + ". The fighter before you is called " + opponent.getName() + " " +
@@ -255,6 +308,22 @@ public class Controller {
             informationLabel.setText("You have already defeated the fighter in this dungeon. Please move again.");
             attackButton.setDisable(true);
             healButton.setDisable(true);
+            button00.setDisable(false);
+            button01.setDisable(false);
+            button02.setDisable(false);
+            button03.setDisable(false);
+            button10.setDisable(false);
+            button11.setDisable(false);
+            button12.setDisable(false);
+            button13.setDisable(false);
+            button20.setDisable(false);
+            button21.setDisable(false);
+            button22.setDisable(false);
+            button23.setDisable(false);
+            button30.setDisable(false);
+            button31.setDisable(false);
+            button32.setDisable(false);
+            button33.setDisable(false);
         }
 
         Image image = new Image(String.valueOf(getClass().getResource(opponent.getPicture())));
@@ -263,13 +332,33 @@ public class Controller {
 
     @FXML
     private void button10Pressed() {
-        button10.setStyle("-fx-background-color: #ff0000; ");
+        button00.setDisable(true);
+        button01.setDisable(true);
+        button02.setDisable(true);
+        button03.setDisable(true);
+        button10.setDisable(true);
+        button11.setDisable(true);
+        button12.setDisable(true);
+        button13.setDisable(true);
+        button20.setDisable(true);
+        button21.setDisable(true);
+        button22.setDisable(true);
+        button23.setDisable(true);
+        button30.setDisable(true);
+        button31.setDisable(true);
+        button32.setDisable(true);
+        button33.setDisable(true);
         playerRow = 1;
         playerColumn = 0;
         currentDungeon = dungeonMaze[1][0];
         opponent = currentDungeon.getFighter();
         if (opponent.getAlive() == true) {
-            healButton.setDisable(false);
+            if (player.getNumOfPotions()>0) {
+                healButton.setDisable(false);
+            }
+            else{
+                healButton.setDisable(true);
+            }
             attackButton.setDisable(false);
 
             player.setNumOfPotions(3);
@@ -277,6 +366,7 @@ public class Controller {
             opponent.setHitPoints();
             playerHP.setText("HP: " + player.getCurrentHitPoints());
             opponentHP.setText("HP: " + opponent.getCurrentHitPoints());
+            potionLabel.setText("Potions: " + player.getNumOfPotions());
 
             informationLabel.setText("You are currently in the dungeon " + currentDungeon.getName() + ". It can best be " +
                     "\ndescribed as " + currentDungeon.getDescription() + ". The fighter before you is called " + opponent.getName() + " " +
@@ -286,6 +376,22 @@ public class Controller {
             informationLabel.setText("You have already defeated the fighter in this dungeon. Please move again.");
             attackButton.setDisable(true);
             healButton.setDisable(true);
+            button00.setDisable(false);
+            button01.setDisable(false);
+            button02.setDisable(false);
+            button03.setDisable(false);
+            button10.setDisable(false);
+            button11.setDisable(false);
+            button12.setDisable(false);
+            button13.setDisable(false);
+            button20.setDisable(false);
+            button21.setDisable(false);
+            button22.setDisable(false);
+            button23.setDisable(false);
+            button30.setDisable(false);
+            button31.setDisable(false);
+            button32.setDisable(false);
+            button33.setDisable(false);
         }
 
         Image image = new Image(String.valueOf(getClass().getResource(opponent.getPicture())));
@@ -295,13 +401,33 @@ public class Controller {
 
     @FXML
     private void button20Pressed() {
-        button20.setStyle("-fx-background-color: #ff0000; ");
+        button00.setDisable(true);
+        button01.setDisable(true);
+        button02.setDisable(true);
+        button03.setDisable(true);
+        button10.setDisable(true);
+        button11.setDisable(true);
+        button12.setDisable(true);
+        button13.setDisable(true);
+        button20.setDisable(true);
+        button21.setDisable(true);
+        button22.setDisable(true);
+        button23.setDisable(true);
+        button30.setDisable(true);
+        button31.setDisable(true);
+        button32.setDisable(true);
+        button33.setDisable(true);
         playerRow = 2;
         playerColumn = 0;
         currentDungeon = dungeonMaze[2][0];
         opponent = currentDungeon.getFighter();
         if (opponent.getAlive() == true) {
-            healButton.setDisable(false);
+            if (player.getNumOfPotions()>0) {
+                healButton.setDisable(false);
+            }
+            else{
+                healButton.setDisable(true);
+            }
             attackButton.setDisable(false);
 
             player.setNumOfPotions(3);
@@ -309,6 +435,7 @@ public class Controller {
             opponent.setHitPoints();
             playerHP.setText("HP: " + player.getCurrentHitPoints());
             opponentHP.setText("HP: " + opponent.getCurrentHitPoints());
+            potionLabel.setText("Potions: " + player.getNumOfPotions());
 
             informationLabel.setText("You are currently in the dungeon " + currentDungeon.getName() + ". It can best be " +
                     "\ndescribed as " + currentDungeon.getDescription() + ". The fighter before you is called " + opponent.getName() + " " +
@@ -318,6 +445,22 @@ public class Controller {
             informationLabel.setText("You have already defeated the fighter in this dungeon. Please move again.");
             attackButton.setDisable(true);
             healButton.setDisable(true);
+            button00.setDisable(false);
+            button01.setDisable(false);
+            button02.setDisable(false);
+            button03.setDisable(false);
+            button10.setDisable(false);
+            button11.setDisable(false);
+            button12.setDisable(false);
+            button13.setDisable(false);
+            button20.setDisable(false);
+            button21.setDisable(false);
+            button22.setDisable(false);
+            button23.setDisable(false);
+            button30.setDisable(false);
+            button31.setDisable(false);
+            button32.setDisable(false);
+            button33.setDisable(false);
         }
 
         Image image = new Image(String.valueOf(getClass().getResource(opponent.getPicture())));
@@ -327,13 +470,33 @@ public class Controller {
 
     @FXML
     private void button30Pressed() {
-        button30.setStyle("-fx-background-color: #ff0000; ");
+        button00.setDisable(true);
+        button01.setDisable(true);
+        button02.setDisable(true);
+        button03.setDisable(true);
+        button10.setDisable(true);
+        button11.setDisable(true);
+        button12.setDisable(true);
+        button13.setDisable(true);
+        button20.setDisable(true);
+        button21.setDisable(true);
+        button22.setDisable(true);
+        button23.setDisable(true);
+        button30.setDisable(true);
+        button31.setDisable(true);
+        button32.setDisable(true);
+        button33.setDisable(true);
         playerRow = 3;
         playerColumn = 0;
         currentDungeon = dungeonMaze[3][0];
         opponent = currentDungeon.getFighter();
         if (opponent.getAlive() == true) {
-            healButton.setDisable(false);
+            if (player.getNumOfPotions()>0) {
+                healButton.setDisable(false);
+            }
+            else{
+                healButton.setDisable(true);
+            }
             attackButton.setDisable(false);
 
             player.setNumOfPotions(3);
@@ -341,6 +504,7 @@ public class Controller {
             opponent.setHitPoints();
             playerHP.setText("HP: " + player.getCurrentHitPoints());
             opponentHP.setText("HP: " + opponent.getCurrentHitPoints());
+            potionLabel.setText("Potions: " + player.getNumOfPotions());
 
             informationLabel.setText("You are currently in the dungeon " + currentDungeon.getName() + ". It can best be " +
                     "\ndescribed as " + currentDungeon.getDescription() + ". The fighter before you is called " + opponent.getName() + " " +
@@ -350,6 +514,22 @@ public class Controller {
             informationLabel.setText("You have already defeated the fighter in this dungeon. Please move again.");
             attackButton.setDisable(true);
             healButton.setDisable(true);
+            button00.setDisable(false);
+            button01.setDisable(false);
+            button02.setDisable(false);
+            button03.setDisable(false);
+            button10.setDisable(false);
+            button11.setDisable(false);
+            button12.setDisable(false);
+            button13.setDisable(false);
+            button20.setDisable(false);
+            button21.setDisable(false);
+            button22.setDisable(false);
+            button23.setDisable(false);
+            button30.setDisable(false);
+            button31.setDisable(false);
+            button32.setDisable(false);
+            button33.setDisable(false);
         }
 
         Image image = new Image(String.valueOf(getClass().getResource(opponent.getPicture())));
@@ -359,13 +539,33 @@ public class Controller {
 
     @FXML
     private void button01Pressed() {
-        button01.setStyle("-fx-background-color: #ff0000; ");
+        button00.setDisable(true);
+        button01.setDisable(true);
+        button02.setDisable(true);
+        button03.setDisable(true);
+        button10.setDisable(true);
+        button11.setDisable(true);
+        button12.setDisable(true);
+        button13.setDisable(true);
+        button20.setDisable(true);
+        button21.setDisable(true);
+        button22.setDisable(true);
+        button23.setDisable(true);
+        button30.setDisable(true);
+        button31.setDisable(true);
+        button32.setDisable(true);
+        button33.setDisable(true);
         playerRow = 0;
         playerColumn = 1;
         currentDungeon = dungeonMaze[0][1];
         opponent = currentDungeon.getFighter();
         if (opponent.getAlive() == true) {
-            healButton.setDisable(false);
+            if (player.getNumOfPotions()>0) {
+                healButton.setDisable(false);
+            }
+            else{
+                healButton.setDisable(true);
+            }
             attackButton.setDisable(false);
 
             player.setNumOfPotions(3);
@@ -373,6 +573,7 @@ public class Controller {
             opponent.setHitPoints();
             playerHP.setText("HP: " + player.getCurrentHitPoints());
             opponentHP.setText("HP: " + opponent.getCurrentHitPoints());
+            potionLabel.setText("Potions: " + player.getNumOfPotions());
 
             informationLabel.setText("You are currently in the dungeon " + currentDungeon.getName() + ". It can best be " +
                     "\ndescribed as " + currentDungeon.getDescription() + ". The fighter before you is called " + opponent.getName() + " " +
@@ -382,6 +583,22 @@ public class Controller {
             informationLabel.setText("You have already defeated the fighter in this dungeon. Please move again.");
             attackButton.setDisable(true);
             healButton.setDisable(true);
+            button00.setDisable(false);
+            button01.setDisable(false);
+            button02.setDisable(false);
+            button03.setDisable(false);
+            button10.setDisable(false);
+            button11.setDisable(false);
+            button12.setDisable(false);
+            button13.setDisable(false);
+            button20.setDisable(false);
+            button21.setDisable(false);
+            button22.setDisable(false);
+            button23.setDisable(false);
+            button30.setDisable(false);
+            button31.setDisable(false);
+            button32.setDisable(false);
+            button33.setDisable(false);
         }
         Image image = new Image(String.valueOf(getClass().getResource(opponent.getPicture())));
         fighterImageView.setImage(image);
@@ -390,13 +607,33 @@ public class Controller {
 
     @FXML
     private void button11Pressed() {
-        button11.setStyle("-fx-background-color: #ff0000; ");
+        button00.setDisable(true);
+        button01.setDisable(true);
+        button02.setDisable(true);
+        button03.setDisable(true);
+        button10.setDisable(true);
+        button11.setDisable(true);
+        button12.setDisable(true);
+        button13.setDisable(true);
+        button20.setDisable(true);
+        button21.setDisable(true);
+        button22.setDisable(true);
+        button23.setDisable(true);
+        button30.setDisable(true);
+        button31.setDisable(true);
+        button32.setDisable(true);
+        button33.setDisable(true);
         playerRow = 1;
         playerColumn = 1;
         currentDungeon = dungeonMaze[1][1];
         opponent = currentDungeon.getFighter();
         if (opponent.getAlive() == true) {
-            healButton.setDisable(false);
+            if (player.getNumOfPotions()>0) {
+                healButton.setDisable(false);
+            }
+            else{
+                healButton.setDisable(true);
+            }
             attackButton.setDisable(false);
 
             player.setNumOfPotions(3);
@@ -404,6 +641,7 @@ public class Controller {
             opponent.setHitPoints();
             playerHP.setText("HP: " + player.getCurrentHitPoints());
             opponentHP.setText("HP: " + opponent.getCurrentHitPoints());
+            potionLabel.setText("Potions: " + player.getNumOfPotions());
 
             informationLabel.setText("You are currently in the dungeon " + currentDungeon.getName() + ". It can best be " +
                     "\ndescribed as " + currentDungeon.getDescription() + ". The fighter before you is called " + opponent.getName() + " " +
@@ -413,6 +651,22 @@ public class Controller {
             informationLabel.setText("You have already defeated the fighter in this dungeon. Please move again.");
             attackButton.setDisable(true);
             healButton.setDisable(true);
+            button00.setDisable(false);
+            button01.setDisable(false);
+            button02.setDisable(false);
+            button03.setDisable(false);
+            button10.setDisable(false);
+            button11.setDisable(false);
+            button12.setDisable(false);
+            button13.setDisable(false);
+            button20.setDisable(false);
+            button21.setDisable(false);
+            button22.setDisable(false);
+            button23.setDisable(false);
+            button30.setDisable(false);
+            button31.setDisable(false);
+            button32.setDisable(false);
+            button33.setDisable(false);
         }
 
         Image image = new Image(String.valueOf(getClass().getResource(opponent.getPicture())));
@@ -422,13 +676,33 @@ public class Controller {
 
     @FXML
     private void button21Pressed() {
-        button21.setStyle("-fx-background-color: #ff0000; ");
+        button00.setDisable(true);
+        button01.setDisable(true);
+        button02.setDisable(true);
+        button03.setDisable(true);
+        button10.setDisable(true);
+        button11.setDisable(true);
+        button12.setDisable(true);
+        button13.setDisable(true);
+        button20.setDisable(true);
+        button21.setDisable(true);
+        button22.setDisable(true);
+        button23.setDisable(true);
+        button30.setDisable(true);
+        button31.setDisable(true);
+        button32.setDisable(true);
+        button33.setDisable(true);
         playerRow = 2;
         playerColumn = 1;
         currentDungeon = dungeonMaze[2][1];
         opponent = currentDungeon.getFighter();
         if (opponent.getAlive() == true) {
-            healButton.setDisable(false);
+            if (player.getNumOfPotions()>0) {
+                healButton.setDisable(false);
+            }
+            else{
+                healButton.setDisable(true);
+            }
             attackButton.setDisable(false);
 
             player.setNumOfPotions(3);
@@ -436,6 +710,7 @@ public class Controller {
             opponent.setHitPoints();
             playerHP.setText("HP: " + player.getCurrentHitPoints());
             opponentHP.setText("HP: " + opponent.getCurrentHitPoints());
+            potionLabel.setText("Potions: " + player.getNumOfPotions());
 
             informationLabel.setText("You are currently in the dungeon " + currentDungeon.getName() + ". It can best be " +
                     "\ndescribed as " + currentDungeon.getDescription() + ". The fighter before you is called " + opponent.getName() + " " +
@@ -445,6 +720,22 @@ public class Controller {
             informationLabel.setText("You have already defeated the fighter in this dungeon. Please move again.");
             attackButton.setDisable(true);
             healButton.setDisable(true);
+            button00.setDisable(false);
+            button01.setDisable(false);
+            button02.setDisable(false);
+            button03.setDisable(false);
+            button10.setDisable(false);
+            button11.setDisable(false);
+            button12.setDisable(false);
+            button13.setDisable(false);
+            button20.setDisable(false);
+            button21.setDisable(false);
+            button22.setDisable(false);
+            button23.setDisable(false);
+            button30.setDisable(false);
+            button31.setDisable(false);
+            button32.setDisable(false);
+            button33.setDisable(false);
         }
 
         Image image = new Image(String.valueOf(getClass().getResource(opponent.getPicture())));
@@ -454,13 +745,33 @@ public class Controller {
 
     @FXML
     private void button31Pressed() {
-        button31.setStyle("-fx-background-color: #ff0000; ");
+        button00.setDisable(true);
+        button01.setDisable(true);
+        button02.setDisable(true);
+        button03.setDisable(true);
+        button10.setDisable(true);
+        button11.setDisable(true);
+        button12.setDisable(true);
+        button13.setDisable(true);
+        button20.setDisable(true);
+        button21.setDisable(true);
+        button22.setDisable(true);
+        button23.setDisable(true);
+        button30.setDisable(true);
+        button31.setDisable(true);
+        button32.setDisable(true);
+        button33.setDisable(true);
         playerRow = 3;
         playerColumn = 1;
         currentDungeon = dungeonMaze[3][1];
         opponent = currentDungeon.getFighter();
         if (opponent.getAlive() == true) {
-            healButton.setDisable(false);
+            if (player.getNumOfPotions()>0) {
+                healButton.setDisable(false);
+            }
+            else{
+                healButton.setDisable(true);
+            }
             attackButton.setDisable(false);
 
             player.setNumOfPotions(3);
@@ -468,6 +779,7 @@ public class Controller {
             opponent.setHitPoints();
             playerHP.setText("HP: " + player.getCurrentHitPoints());
             opponentHP.setText("HP: " + opponent.getCurrentHitPoints());
+            potionLabel.setText("Potions: " + player.getNumOfPotions());
 
             informationLabel.setText("You are currently in the dungeon " + currentDungeon.getName() + ". It can best be " +
                     "\ndescribed as " + currentDungeon.getDescription() + ". The fighter before you is called " + opponent.getName() + " " +
@@ -477,6 +789,22 @@ public class Controller {
             informationLabel.setText("You have already defeated the fighter in this dungeon. Please move again.");
             attackButton.setDisable(true);
             healButton.setDisable(true);
+            button00.setDisable(false);
+            button01.setDisable(false);
+            button02.setDisable(false);
+            button03.setDisable(false);
+            button10.setDisable(false);
+            button11.setDisable(false);
+            button12.setDisable(false);
+            button13.setDisable(false);
+            button20.setDisable(false);
+            button21.setDisable(false);
+            button22.setDisable(false);
+            button23.setDisable(false);
+            button30.setDisable(false);
+            button31.setDisable(false);
+            button32.setDisable(false);
+            button33.setDisable(false);
         }
         Image image = new Image(String.valueOf(getClass().getResource(opponent.getPicture())));
         fighterImageView.setImage(image);
@@ -485,13 +813,33 @@ public class Controller {
 
     @FXML
     private void button02Pressed() {
-        button02.setStyle("-fx-background-color: #ff0000; ");
+        button00.setDisable(true);
+        button01.setDisable(true);
+        button02.setDisable(true);
+        button03.setDisable(true);
+        button10.setDisable(true);
+        button11.setDisable(true);
+        button12.setDisable(true);
+        button13.setDisable(true);
+        button20.setDisable(true);
+        button21.setDisable(true);
+        button22.setDisable(true);
+        button23.setDisable(true);
+        button30.setDisable(true);
+        button31.setDisable(true);
+        button32.setDisable(true);
+        button33.setDisable(true);
         playerRow = 0;
         playerColumn = 2;
         currentDungeon = dungeonMaze[0][2];
         opponent = currentDungeon.getFighter();
         if (opponent.getAlive() == true) {
-            healButton.setDisable(false);
+            if (player.getNumOfPotions()>0) {
+                healButton.setDisable(false);
+            }
+            else{
+                healButton.setDisable(true);
+            }
             attackButton.setDisable(false);
 
             player.setNumOfPotions(3);
@@ -499,6 +847,7 @@ public class Controller {
             opponent.setHitPoints();
             playerHP.setText("HP: " + player.getCurrentHitPoints());
             opponentHP.setText("HP: " + opponent.getCurrentHitPoints());
+            potionLabel.setText("Potions: " + player.getNumOfPotions());
 
             informationLabel.setText("You are currently in the dungeon " + currentDungeon.getName() + ". It can best be " +
                     "\ndescribed as " + currentDungeon.getDescription() + ". The fighter before you is called " + opponent.getName() + " " +
@@ -508,6 +857,22 @@ public class Controller {
             informationLabel.setText("You have already defeated the fighter in this dungeon. Please move again.");
             attackButton.setDisable(true);
             healButton.setDisable(true);
+            button00.setDisable(false);
+            button01.setDisable(false);
+            button02.setDisable(false);
+            button03.setDisable(false);
+            button10.setDisable(false);
+            button11.setDisable(false);
+            button12.setDisable(false);
+            button13.setDisable(false);
+            button20.setDisable(false);
+            button21.setDisable(false);
+            button22.setDisable(false);
+            button23.setDisable(false);
+            button30.setDisable(false);
+            button31.setDisable(false);
+            button32.setDisable(false);
+            button33.setDisable(false);
         }
 
         Image image = new Image(String.valueOf(getClass().getResource(opponent.getPicture())));
@@ -517,13 +882,33 @@ public class Controller {
 
     @FXML
     private void button12Pressed() {
-        button12.setStyle("-fx-background-color: #ff0000; ");
+        button00.setDisable(true);
+        button01.setDisable(true);
+        button02.setDisable(true);
+        button03.setDisable(true);
+        button10.setDisable(true);
+        button11.setDisable(true);
+        button12.setDisable(true);
+        button13.setDisable(true);
+        button20.setDisable(true);
+        button21.setDisable(true);
+        button22.setDisable(true);
+        button23.setDisable(true);
+        button30.setDisable(true);
+        button31.setDisable(true);
+        button32.setDisable(true);
+        button33.setDisable(true);
         playerRow = 1;
         playerColumn = 2;
         currentDungeon = dungeonMaze[1][2];
         opponent = currentDungeon.getFighter();
         if (opponent.getAlive() == true) {
-            healButton.setDisable(false);
+            if (player.getNumOfPotions()>0) {
+                healButton.setDisable(false);
+            }
+            else{
+                healButton.setDisable(true);
+            }
             attackButton.setDisable(false);
 
             player.setNumOfPotions(3);
@@ -531,6 +916,7 @@ public class Controller {
             opponent.setHitPoints();
             playerHP.setText("HP: " + player.getCurrentHitPoints());
             opponentHP.setText("HP: " + opponent.getCurrentHitPoints());
+            potionLabel.setText("Potions: " + player.getNumOfPotions());
 
             informationLabel.setText("You are currently in the dungeon " + currentDungeon.getName() + ". It can best be " +
                     "\ndescribed as " + currentDungeon.getDescription() + ". The fighter before you is called " + opponent.getName() + " " +
@@ -540,6 +926,22 @@ public class Controller {
             informationLabel.setText("You have already defeated the fighter in this dungeon. Please move again.");
             attackButton.setDisable(true);
             healButton.setDisable(true);
+            button00.setDisable(false);
+            button01.setDisable(false);
+            button02.setDisable(false);
+            button03.setDisable(false);
+            button10.setDisable(false);
+            button11.setDisable(false);
+            button12.setDisable(false);
+            button13.setDisable(false);
+            button20.setDisable(false);
+            button21.setDisable(false);
+            button22.setDisable(false);
+            button23.setDisable(false);
+            button30.setDisable(false);
+            button31.setDisable(false);
+            button32.setDisable(false);
+            button33.setDisable(false);
         }
 
         Image image = new Image(String.valueOf(getClass().getResource(opponent.getPicture())));
@@ -549,13 +951,33 @@ public class Controller {
 
     @FXML
     private void button22Pressed() {
-        button22.setStyle("-fx-background-color: #ff0000; ");
+        button00.setDisable(true);
+        button01.setDisable(true);
+        button02.setDisable(true);
+        button03.setDisable(true);
+        button10.setDisable(true);
+        button11.setDisable(true);
+        button12.setDisable(true);
+        button13.setDisable(true);
+        button20.setDisable(true);
+        button21.setDisable(true);
+        button22.setDisable(true);
+        button23.setDisable(true);
+        button30.setDisable(true);
+        button31.setDisable(true);
+        button32.setDisable(true);
+        button33.setDisable(true);
         playerRow = 2;
         playerColumn = 2;
         currentDungeon = dungeonMaze[2][2];
         opponent = currentDungeon.getFighter();
         if (opponent.getAlive() == true) {
-            healButton.setDisable(false);
+            if (player.getNumOfPotions()>0) {
+                healButton.setDisable(false);
+            }
+            else{
+                healButton.setDisable(true);
+            }
             attackButton.setDisable(false);
 
             player.setNumOfPotions(3);
@@ -563,6 +985,7 @@ public class Controller {
             opponent.setHitPoints();
             playerHP.setText("HP: " + player.getCurrentHitPoints());
             opponentHP.setText("HP: " + opponent.getCurrentHitPoints());
+            potionLabel.setText("Potions: " + player.getNumOfPotions());
 
             informationLabel.setText("You are currently in the dungeon " + currentDungeon.getName() + ". It can best be " +
                     "\ndescribed as " + currentDungeon.getDescription() + ". The fighter before you is called " + opponent.getName() + " " +
@@ -572,6 +995,22 @@ public class Controller {
             informationLabel.setText("You have already defeated the fighter in this dungeon. Please move again.");
             attackButton.setDisable(true);
             healButton.setDisable(true);
+            button00.setDisable(false);
+            button01.setDisable(false);
+            button02.setDisable(false);
+            button03.setDisable(false);
+            button10.setDisable(false);
+            button11.setDisable(false);
+            button12.setDisable(false);
+            button13.setDisable(false);
+            button20.setDisable(false);
+            button21.setDisable(false);
+            button22.setDisable(false);
+            button23.setDisable(false);
+            button30.setDisable(false);
+            button31.setDisable(false);
+            button32.setDisable(false);
+            button33.setDisable(false);
         }
 
         Image image = new Image(String.valueOf(getClass().getResource(opponent.getPicture())));
@@ -581,13 +1020,33 @@ public class Controller {
 
     @FXML
     private void button32Pressed() {
-        button32.setStyle("-fx-background-color: #ff0000; ");
+        button00.setDisable(true);
+        button01.setDisable(true);
+        button02.setDisable(true);
+        button03.setDisable(true);
+        button10.setDisable(true);
+        button11.setDisable(true);
+        button12.setDisable(true);
+        button13.setDisable(true);
+        button20.setDisable(true);
+        button21.setDisable(true);
+        button22.setDisable(true);
+        button23.setDisable(true);
+        button30.setDisable(true);
+        button31.setDisable(true);
+        button32.setDisable(true);
+        button33.setDisable(true);
         playerRow = 3;
         playerColumn = 2;
         currentDungeon = dungeonMaze[3][2];
         opponent = currentDungeon.getFighter();
         if (opponent.getAlive() == true) {
-            healButton.setDisable(false);
+            if (player.getNumOfPotions()>0) {
+                healButton.setDisable(false);
+            }
+            else{
+                healButton.setDisable(true);
+            }
             attackButton.setDisable(false);
 
             player.setNumOfPotions(3);
@@ -595,6 +1054,7 @@ public class Controller {
             opponent.setHitPoints();
             playerHP.setText("HP: " + player.getCurrentHitPoints());
             opponentHP.setText("HP: " + opponent.getCurrentHitPoints());
+            potionLabel.setText("Potions: " + player.getNumOfPotions());
 
             informationLabel.setText("You are currently in the dungeon " + currentDungeon.getName() + ". It can best be " +
                     "\ndescribed as " + currentDungeon.getDescription() + ". The fighter before you is called " + opponent.getName() + " " +
@@ -604,6 +1064,22 @@ public class Controller {
             informationLabel.setText("You have already defeated the fighter in this dungeon. Please move again.");
             attackButton.setDisable(true);
             healButton.setDisable(true);
+            button00.setDisable(false);
+            button01.setDisable(false);
+            button02.setDisable(false);
+            button03.setDisable(false);
+            button10.setDisable(false);
+            button11.setDisable(false);
+            button12.setDisable(false);
+            button13.setDisable(false);
+            button20.setDisable(false);
+            button21.setDisable(false);
+            button22.setDisable(false);
+            button23.setDisable(false);
+            button30.setDisable(false);
+            button31.setDisable(false);
+            button32.setDisable(false);
+            button33.setDisable(false);
         }
         Image image = new Image(String.valueOf(getClass().getResource(opponent.getPicture())));
         fighterImageView.setImage(image);
@@ -612,13 +1088,33 @@ public class Controller {
 
     @FXML
     private void button03Pressed() {
-        button03.setStyle("-fx-background-color: #ff0000; ");
+        button00.setDisable(true);
+        button01.setDisable(true);
+        button02.setDisable(true);
+        button03.setDisable(true);
+        button10.setDisable(true);
+        button11.setDisable(true);
+        button12.setDisable(true);
+        button13.setDisable(true);
+        button20.setDisable(true);
+        button21.setDisable(true);
+        button22.setDisable(true);
+        button23.setDisable(true);
+        button30.setDisable(true);
+        button31.setDisable(true);
+        button32.setDisable(true);
+        button33.setDisable(true);
         playerRow = 0;
         playerColumn = 3;
         currentDungeon = dungeonMaze[0][3];
         opponent = currentDungeon.getFighter();
         if (opponent.getAlive() == true) {
-            healButton.setDisable(false);
+            if (player.getNumOfPotions()>0) {
+                healButton.setDisable(false);
+            }
+            else{
+                healButton.setDisable(true);
+            }
             attackButton.setDisable(false);
 
             player.setNumOfPotions(3);
@@ -626,6 +1122,7 @@ public class Controller {
             opponent.setHitPoints();
             playerHP.setText("HP: " + player.getCurrentHitPoints());
             opponentHP.setText("HP: " + opponent.getCurrentHitPoints());
+            potionLabel.setText("Potions: " + player.getNumOfPotions());
 
             informationLabel.setText("You are currently in the dungeon " + currentDungeon.getName() + ". It can best be " +
                     "\ndescribed as " + currentDungeon.getDescription() + ". The fighter before you is called " + opponent.getName() + " " +
@@ -635,6 +1132,22 @@ public class Controller {
             informationLabel.setText("You have already defeated the fighter in this dungeon. Please move again.");
             attackButton.setDisable(true);
             healButton.setDisable(true);
+            button00.setDisable(false);
+            button01.setDisable(false);
+            button02.setDisable(false);
+            button03.setDisable(false);
+            button10.setDisable(false);
+            button11.setDisable(false);
+            button12.setDisable(false);
+            button13.setDisable(false);
+            button20.setDisable(false);
+            button21.setDisable(false);
+            button22.setDisable(false);
+            button23.setDisable(false);
+            button30.setDisable(false);
+            button31.setDisable(false);
+            button32.setDisable(false);
+            button33.setDisable(false);
         }
 
         Image image = new Image(String.valueOf(getClass().getResource(opponent.getPicture())));
@@ -644,13 +1157,33 @@ public class Controller {
 
     @FXML
     private void button13Pressed() {
-        button13.setStyle("-fx-background-color: #ff0000; ");
+        button00.setDisable(true);
+        button01.setDisable(true);
+        button02.setDisable(true);
+        button03.setDisable(true);
+        button10.setDisable(true);
+        button11.setDisable(true);
+        button12.setDisable(true);
+        button13.setDisable(true);
+        button20.setDisable(true);
+        button21.setDisable(true);
+        button22.setDisable(true);
+        button23.setDisable(true);
+        button30.setDisable(true);
+        button31.setDisable(true);
+        button32.setDisable(true);
+        button33.setDisable(true);
         playerRow = 1;
         playerColumn = 3;
         currentDungeon = dungeonMaze[1][3];
         opponent = currentDungeon.getFighter();
         if (opponent.getAlive() == true) {
-            healButton.setDisable(false);
+            if (player.getNumOfPotions()>0) {
+                healButton.setDisable(false);
+            }
+            else{
+                healButton.setDisable(true);
+            }
             attackButton.setDisable(false);
 
             player.setNumOfPotions(3);
@@ -658,6 +1191,7 @@ public class Controller {
             opponent.setHitPoints();
             playerHP.setText("HP: " + player.getCurrentHitPoints());
             opponentHP.setText("HP: " + opponent.getCurrentHitPoints());
+            potionLabel.setText("Potions: " + player.getNumOfPotions());
 
             informationLabel.setText("You are currently in the dungeon " + currentDungeon.getName() + ". It can best be " +
                     "\ndescribed as " + currentDungeon.getDescription() + ". The fighter before you is called " + opponent.getName() + " " +
@@ -667,6 +1201,22 @@ public class Controller {
             informationLabel.setText("You have already defeated the fighter in this dungeon. Please move again.");
             attackButton.setDisable(true);
             healButton.setDisable(true);
+            button00.setDisable(false);
+            button01.setDisable(false);
+            button02.setDisable(false);
+            button03.setDisable(false);
+            button10.setDisable(false);
+            button11.setDisable(false);
+            button12.setDisable(false);
+            button13.setDisable(false);
+            button20.setDisable(false);
+            button21.setDisable(false);
+            button22.setDisable(false);
+            button23.setDisable(false);
+            button30.setDisable(false);
+            button31.setDisable(false);
+            button32.setDisable(false);
+            button33.setDisable(false);
         }
 
         Image image = new Image(String.valueOf(getClass().getResource(opponent.getPicture())));
@@ -676,13 +1226,33 @@ public class Controller {
 
     @FXML
     private void button23Pressed() {
-        button23.setStyle("-fx-background-color: #ff0000; ");
+        button00.setDisable(true);
+        button01.setDisable(true);
+        button02.setDisable(true);
+        button03.setDisable(true);
+        button10.setDisable(true);
+        button11.setDisable(true);
+        button12.setDisable(true);
+        button13.setDisable(true);
+        button20.setDisable(true);
+        button21.setDisable(true);
+        button22.setDisable(true);
+        button23.setDisable(true);
+        button30.setDisable(true);
+        button31.setDisable(true);
+        button32.setDisable(true);
+        button33.setDisable(true);
         playerRow = 2;
         playerColumn = 3;
         currentDungeon = dungeonMaze[2][3];
         opponent = currentDungeon.getFighter();
         if (opponent.getAlive() == true) {
-            healButton.setDisable(false);
+            if (player.getNumOfPotions()>0) {
+                healButton.setDisable(false);
+            }
+            else{
+                healButton.setDisable(true);
+            }
             attackButton.setDisable(false);
 
             player.setNumOfPotions(3);
@@ -690,6 +1260,7 @@ public class Controller {
             opponent.setHitPoints();
             playerHP.setText("HP: " + player.getCurrentHitPoints());
             opponentHP.setText("HP: " + opponent.getCurrentHitPoints());
+            potionLabel.setText("Potions: " + player.getNumOfPotions());
 
             informationLabel.setText("You are currently in the dungeon " + currentDungeon.getName() + ". It can best be " +
                     "\ndescribed as " + currentDungeon.getDescription() + ". The fighter before you is called " + opponent.getName() + " " +
@@ -699,6 +1270,22 @@ public class Controller {
             informationLabel.setText("You have already defeated the fighter in this dungeon. Please move again.");
             attackButton.setDisable(true);
             healButton.setDisable(true);
+            button00.setDisable(false);
+            button01.setDisable(false);
+            button02.setDisable(false);
+            button03.setDisable(false);
+            button10.setDisable(false);
+            button11.setDisable(false);
+            button12.setDisable(false);
+            button13.setDisable(false);
+            button20.setDisable(false);
+            button21.setDisable(false);
+            button22.setDisable(false);
+            button23.setDisable(false);
+            button30.setDisable(false);
+            button31.setDisable(false);
+            button32.setDisable(false);
+            button33.setDisable(false);
         }
 
         Image image = new Image(String.valueOf(getClass().getResource(opponent.getPicture())));
@@ -708,13 +1295,33 @@ public class Controller {
 
     @FXML
     private void button33Pressed() {
-        button33.setStyle("-fx-background-color: #ff0000; ");
+        button00.setDisable(true);
+        button01.setDisable(true);
+        button02.setDisable(true);
+        button03.setDisable(true);
+        button10.setDisable(true);
+        button11.setDisable(true);
+        button12.setDisable(true);
+        button13.setDisable(true);
+        button20.setDisable(true);
+        button21.setDisable(true);
+        button22.setDisable(true);
+        button23.setDisable(true);
+        button30.setDisable(true);
+        button31.setDisable(true);
+        button32.setDisable(true);
+        button33.setDisable(true);
         playerRow = 3;
         playerColumn = 3;
         currentDungeon = dungeonMaze[3][3];
         opponent = currentDungeon.getFighter();
         if (opponent.getAlive() == true) {
-            healButton.setDisable(false);
+            if (player.getNumOfPotions()>0) {
+                healButton.setDisable(false);
+            }
+            else{
+                healButton.setDisable(true);
+            }
             attackButton.setDisable(false);
 
             player.setNumOfPotions(3);
@@ -722,6 +1329,7 @@ public class Controller {
             opponent.setHitPoints();
             playerHP.setText("HP: " + player.getCurrentHitPoints());
             opponentHP.setText("HP: " + opponent.getCurrentHitPoints());
+            potionLabel.setText("Potions: " + player.getNumOfPotions());
 
             informationLabel.setText("You are currently in the dungeon " + currentDungeon.getName() + ". It can best be " +
                     "\ndescribed as " + currentDungeon.getDescription() + ". The fighter before you is called " + opponent.getName() + " " +
@@ -731,6 +1339,22 @@ public class Controller {
             informationLabel.setText("You have already defeated the fighter in this dungeon. Please move again.");
             attackButton.setDisable(true);
             healButton.setDisable(true);
+            button00.setDisable(false);
+            button01.setDisable(false);
+            button02.setDisable(false);
+            button03.setDisable(false);
+            button10.setDisable(false);
+            button11.setDisable(false);
+            button12.setDisable(false);
+            button13.setDisable(false);
+            button20.setDisable(false);
+            button21.setDisable(false);
+            button22.setDisable(false);
+            button23.setDisable(false);
+            button30.setDisable(false);
+            button31.setDisable(false);
+            button32.setDisable(false);
+            button33.setDisable(false);
         }
         Image image = new Image(String.valueOf(getClass().getResource(opponent.getPicture())));
         fighterImageView.setImage(image);
